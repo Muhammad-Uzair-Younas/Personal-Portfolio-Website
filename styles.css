@@ -1,0 +1,239 @@
+
+/* General Styling */
+:root{
+    --primary:#2563EB;
+    --primary-hover:#1D4ED8;
+    --dark:#0F172A;
+    --background:#F8FAFC;
+    --white:#FFFFFF;
+    --text:#1E293B;
+    --muted:#64748B;
+    --surface:#FFFFFF;
+    --border:#E2E8F0;
+    --transition:0.3s ease;
+}
+
+body{
+    background:var(--background);
+    color:var(--text);
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+section{
+    scroll-margin-top:60px;
+}
+
+/* styling for badges in projects, experience and certification section */
+.badge-python{
+    background:#3776AB;
+    color:var(--white);
+    font-weight: 500;
+    border-radius: 50rem;
+}
+
+.badge-django{
+    background:#092E20;
+    color:#fff;
+    font-weight: 500;
+    border-radius: 50rem;
+}
+
+.badge-streamlit{
+    background:#FF4B4B;
+    color:#fff;
+    font-weight: 500;
+    border-radius: 50rem;
+}
+
+.badge-sqlite{
+    background:#003B57;
+    color:#fff;
+    font-weight: 500;
+    border-radius: 50rem;
+}
+
+.badge-bootstrap{
+    background:#7952B3;
+    color:#fff;
+    font-weight: 500;
+    border-radius: 50rem;
+}
+
+.badge-flask{
+    background:#212529;
+    color:#fff;
+    font-weight: 500;
+    border-radius: 50rem;
+}
+.tech-badge{
+    background: var(--primary);
+    color: #fff;
+    font-weight: 500;
+    border-radius: 50rem;
+}
+.section-title{
+    font-weight:700;
+}
+
+.section-subtitle{
+    color:var(--muted);
+    max-width:650px;
+    margin:0 auto 3rem;
+}
+
+/* icons in skills and education section */
+ul i{
+    color: var(--primary);
+    width:22px;
+    text-align:center;
+}
+
+/* hoover effect for cards */
+.card{
+    transition: var(--transition);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+}
+
+
+/* ----------Navabr ------ */
+.custom-navbar{
+    padding: 10px 0;
+    
+    background: rgba(15,23,42,.92);
+    backdrop-filter: blur(12px);
+    transition:var(--transition);
+  }
+
+.navbar-brand{
+    color:var(--white);
+    transition:var(--transition);
+}
+
+.navbar-brand:hover{
+    color:var(--white);
+    transform:scale(1.03);
+}
+.navbar-nav .nav-link{
+    color:rgba(255,255,255,.8);
+    font-weight:500;
+    position:relative;
+    transition:var(--transition);
+}
+
+.navbar-nav .nav-link:hover{
+    color:var(--primary);
+}
+
+.navbar-nav .nav-link::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:4px;
+    width:0;
+    height:2px;
+    background:var(--primary);
+    transform:translateX(-50%);
+    transition:width .3s ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after{
+    width:70%;
+}
+@media(max-width:991px){
+
+    .navbar-collapse{
+        background:rgba(15,23,42,.98);
+        border-radius:12px;
+        margin-top:12px;
+        padding:15px;
+        
+    }
+}
+
+/* --------- home/hero ------ */
+.img-hero{
+    transition: var(--transition);
+    height: 470px;
+}
+.img-hero:hover{
+    transform: scale(1.02);
+}
+
+
+/*------- about section--------- */
+.table th i{
+    color: var(--primary);
+}
+.table th{
+    color: var(--text);
+}
+.table td{
+    padding: 0.9rem 0;
+    vertical-align: middle;
+    color: var(--muted);
+}
+
+#about img{
+    transition: var(--transition);
+}
+
+#about img:hover{
+    transform: scale(1.02);
+}
+#about .text-muted{
+    color: var(--muted) !important;
+}
+
+
+
+/* -----skilss section------ */
+#skills .card-title i{
+    color: var(--primary);
+}
+
+
+
+
+
+
+/* -----Projects Section----------- */
+.project-img{
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.project-img:hover{
+    transform: scale(1.03);
+}
+
+.modal img{
+    object-fit:contain;
+}
+.carousel-indicators [data-bs-target]{
+    background-color: var(--primary);
+}
+.carousel-control-prev,
+.carousel-control-next{
+    width: 8px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon{
+    background-color: rgba(0,0,0,.65);
+    border-radius: 50%;
+    padding: 18px;
+    background-size: 60%;
+}
