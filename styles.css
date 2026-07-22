@@ -1,5 +1,14 @@
+/* =========================================================================
+   PORTFOLIO STYLESHEET — Bootstrap 5.3.8 companion
+   Only styles custom classes + overrides Bootstrap where necessary.
+   Grid, containers, base card/button mechanics are left to Bootstrap.
+   ========================================================================= */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-   /* 1. General Styling */
+
+/* -------------------------------------------------------------------------
+   1. CSS VARIABLES
+   ------------------------------------------------------------------------- */
 :root {
   --color-primary: #2563EB;
   --color-primary-hover: #1D4ED8;
@@ -31,6 +40,9 @@
   --navbar-height: 76px;
 }
 
+/* -------------------------------------------------------------------------
+   2. GLOBAL TYPE & PAGE BASICS (light touch — no Bootstrap reset redone)
+   ------------------------------------------------------------------------- */
 body {
   font-family: var(--font-primary);
   color: var(--color-text);
@@ -38,22 +50,27 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-primary);
   font-weight: 700;
   color: var(--color-dark);
   letter-spacing: -0.02em;
 }
+
 section {
   scroll-margin-top: var(--navbar-height);
   padding-block: 4rem;
 }
+
 ::selection {
   background: var(--color-primary);
   color: #fff;
 }
 
-/* 3. NAVBAR */
+/* -------------------------------------------------------------------------
+   3. NAVBAR (custom class: .custom-navbar, .brand-highlight)
+   ------------------------------------------------------------------------- */
 .custom-navbar {
   min-height: var(--navbar-height);
   background: rgba(15, 23, 42, 0.9);
@@ -61,14 +78,17 @@ section {
   -webkit-backdrop-filter: blur(14px) saturate(160%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
+
 .navbar-brand {
   font-size: 1.35rem;
   color: #fff !important;
 }
+
 .brand-highlight {
   color: var(--color-primary);
 }
 
+/* Override Bootstrap's default nav-link color/hover for a branded feel */
 .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.78) !important;
   font-weight: 500;
@@ -76,6 +96,7 @@ section {
   position: relative;
   transition: color var(--transition-fast);
 }
+
 .navbar-nav .nav-link::after {
   content: '';
   position: absolute;
@@ -87,10 +108,12 @@ section {
   transform: scaleX(0);
   transition: transform var(--transition-base);
 }
+
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
   color: #fff !important;
 }
+
 .navbar-nav .nav-link:hover::after {
   transform: scaleX(1);
 }
@@ -102,47 +125,57 @@ section {
     margin-top: 0.75rem;
     padding: 0.5rem 1rem 1rem;
   }
+
   .navbar-nav .nav-link {
     padding: 0.6rem 0.5rem !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
+
   .navbar-nav .nav-link::after {
     display: none;
   }
 }
 
-/* 4. HERO SECTION */
+/* -------------------------------------------------------------------------
+   4. HERO SECTION (custom class: .img-hero)
+   ------------------------------------------------------------------------- */
 #home {
   padding-top: calc(var(--navbar-height) + 1.5rem);
 }
+
 #home h1 {
   font-size: clamp(1.9rem, 4vw, 3rem);
   line-height: 1.15;
 }
+
 #home p.fs-5 {
   color: var(--color-muted);
 }
-.img-hero {
+
+.hero-photo {
+  width: clamp(220px, 30vw, 340px);
   aspect-ratio: 1 / 1;
-  max-height: 380px;
-  overflow: hidden;
-}
-.img-hero img {
-  width: 100%;
-  height: 100%;
+  border-radius: 50%;
   object-fit: cover;
-  transition: transform var(--transition-slow);
-}
-.img-hero:hover img {
-  transform: scale(1.05);
+  border: 6px solid var(--color-surface);
+  box-shadow: var(--shadow-lg);
+  transition: transform var(--transition-slow), box-shadow var(--transition-base);
 }
 
-/* 5. SECTION HEADINGS */
+.hero-photo:hover {
+  transform: scale(1.04);
+  box-shadow: 0 25px 50px rgba(37, 99, 235, 0.22);
+}
+
+/* -------------------------------------------------------------------------
+   5. SECTION HEADINGS (custom classes: .section-title, .section-subtitle)
+   ------------------------------------------------------------------------- */
 .section-title {
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 800;
   margin-bottom: 0.5rem;
 }
+
 .section-title::after {
   content: '';
   display: block;
@@ -152,6 +185,7 @@ section {
   border-radius: var(--radius-pill);
   margin: 0.5rem auto 0;
 }
+
 .section-subtitle {
   color: var(--color-muted);
   font-size: 1.05rem;
@@ -159,70 +193,88 @@ section {
   margin: 0 auto 2.5rem;
 }
 
-/* 6. BOOTSTRAP CARDS */
+/* -------------------------------------------------------------------------
+   6. BOOTSTRAP CARD OVERRIDES (soft shadow + hover lift, not a rebuild)
+   ------------------------------------------------------------------------- */
 .card {
   border-radius: var(--radius-md);
   transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
+
 .card.shadow,
 .card.shadow-sm {
   box-shadow: var(--shadow-md) !important;
   border: 1px solid var(--color-border) !important;
 }
+
 #skills .card:hover,
 #certifications .card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-lg) !important;
 }
+
 #projects .card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg) !important;
 }
+
 #experience .card {
   border-left: 4px solid var(--color-primary) !important;
 }
+
 #experience .card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg) !important;
 }
 
-/* 7. Button Styling*/
+/* -------------------------------------------------------------------------
+   7. BOOTSTRAP BUTTON OVERRIDES (color/hover only, not a rebuild)
+   ------------------------------------------------------------------------- */
 .btn {
   font-weight: 600;
   border-radius: var(--radius-sm);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast),
     background-color var(--transition-fast), border-color var(--transition-fast);
 }
+
 .btn-primary {
   background: var(--gradient-primary);
   border: none;
   box-shadow: var(--shadow-primary);
 }
+
 .btn-primary:hover,
 .btn-primary:focus {
   background: var(--color-primary-hover);
   transform: translateY(-3px);
   box-shadow: 0 14px 30px rgba(37, 99, 235, 0.32);
 }
+
 .btn-outline-primary {
   color: var(--color-primary);
   border-color: var(--color-primary);
 }
+
 .btn-outline-primary:hover {
   background: var(--color-primary);
   border-color: var(--color-primary);
   transform: translateY(-3px);
   box-shadow: var(--shadow-primary);
 }
+
 .btn-dark:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 25px rgba(15, 23, 42, 0.25);
 }
+
 .btn-outline-danger:hover {
   transform: translateY(-3px);
 }
 
-/* 8. BADGES */
+/* -------------------------------------------------------------------------
+   8. BADGES (custom classes: badge-python, badge-streamlit, badge-sqlite,
+   badge-django, badge-bootstrap, badge-flask, .tech-badge)
+   ------------------------------------------------------------------------- */
 .badge {
   font-weight: 500;
   font-size: 0.78rem;
@@ -243,7 +295,9 @@ section {
 .badge-flask { background: #F8FAFC; color: #334155; border: 1px solid var(--color-border); }
 .tech-badge { background: var(--color-bg); color: var(--color-muted); border: 1px solid var(--color-border); }
 
-/* 9. PROJECT IMAGES (custom class: .project-img) */
+/* -------------------------------------------------------------------------
+   9. PROJECT IMAGES (custom class: .project-img)
+   ------------------------------------------------------------------------- */
 .project-img {
   width: 100%;
   height: 220px;
@@ -251,35 +305,43 @@ section {
   cursor: pointer;
   transition: transform var(--transition-slow);
 }
+
 #projects .card:hover .project-img {
   transform: scale(1.06);
 }
 
-/* 10. MODAL & CAROUSEL*/
+/* -------------------------------------------------------------------------
+   10. MODAL & CAROUSEL OVERRIDES (visual polish only)
+   ------------------------------------------------------------------------- */
 .modal-content {
   border-radius: var(--radius-md);
   border: none;
   overflow: hidden;
   box-shadow: var(--shadow-lg);
 }
+
 .modal-header {
   background: var(--color-dark);
   border-bottom: none;
   padding: 1.1rem 1.5rem;
 }
+
 .modal-title {
   color: #fff;
   font-weight: 600;
   font-size: 1.1rem;
 }
+
 .modal-header .btn-close {
   filter: invert(1) brightness(2);
   opacity: 0.85;
 }
+
 .modal-body {
   padding: 0;
   background: var(--color-dark);
 }
+
 .carousel-item img,
 .carousel-item video {
   width: 100%;
@@ -287,38 +349,76 @@ section {
   object-fit: contain;
   background: var(--color-dark);
 }
+
 .carousel-item .ratio {
   background: var(--color-dark);
 }
+
 .carousel-indicators [data-bs-target] {
   background-color: var(--color-primary);
 }
 
-/* 11. RESPONSIVE ADJUSTMENTS*/
+/* -------------------------------------------------------------------------
+   11. RESPONSIVE ADJUSTMENTS (spacing/sizing tweaks only)
+   ------------------------------------------------------------------------- */
 @media (max-width: 767.98px) {
   section {
     padding-block: 2.5rem;
   }
+
   #home {
     padding-top: calc(var(--navbar-height) + 1rem);
   }
+
   .img-hero {
     max-height: 280px;
     margin-top: 1.5rem;
   }
+
   .project-img {
     height: 190px;
   }
 }
+
 @media (min-width: 768px) and (max-width: 991.98px) {
   .project-img {
     height: 210px;
   }
 }
+
+/* -------------------------------------------------------------------------
+   12. ICON COLORS — Skills & About sections
+   (targeted via section id, no HTML classes required)
+   ------------------------------------------------------------------------- */
+#skills .card-title i {
+  color: var(--color-primary);
+}
+
+#skills ul li {
+  display: flex;
+  align-items: center;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+#skills ul li:hover {
+  color: var(--color-primary);
+  transform: translateX(4px);
+}
+
+#skills ul li i {
+  width: 22px;
+  color: var(--color-primary);
+}
+
+#about table th i {
+  color: var(--color-primary);
+}
+
 @media (min-width: 1200px) {
   section {
     padding-block: 5rem;
   }
+
   .project-img {
     height: 250px;
   }
