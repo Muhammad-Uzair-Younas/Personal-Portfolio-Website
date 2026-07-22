@@ -18,12 +18,12 @@
 </head>
 
 
-<body>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="80" tabindex="0">
   <!-- navbar -->
   <nav class="navbar navbar-dark navbar-expand-lg custom-navbar sticky-top shadow">
     <div class="container">
 
-      <a class="navbar-brand fw-bold" href="#home">Muhammad <span style="color: var(--primary);">Uzair</span></a>
+      <a class="navbar-brand fw-bold" href="#home">Muhammad <span class="brand-highlight">Uzair</span></a>
 
         <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
@@ -45,17 +45,17 @@
     </div>
   </nav>
 
-  <section id="home">
-    <div class="container py-4">
-      <div class="row py-2 px-3 pe-lg-0 align-items-center rounded-4 shadow" data-aos="fade-in">
+  <!-- <section id="home"> -->
+    <div class="container py-4" id="home">
+      <div class="row py-2 px-3 pe-lg-0 align-items-center rounded-4 shadow" data-aos="fade-down">
         <div class="col-lg-7 p-3">
-          <p class="text-primary fw-semibold mb-2">Hello, I'm</p>
+          <p class="text-primary fw-semibold mb-2">Hi, I'm</p>
           <h1 class="display-6 fw-bold lh-1"><strong>Muhammad</strong> <span class="text-primary">Uzair Younas</span></h1>
-          <p class="text-secondary mb-3">Software Engineering Student & Python Developer</p>
-          <p class="fs-5">I build modern web applications using Python, Django, REST APIs, and Bootstrap. Passionate about solving real-world problems and continuously learning new technologies.</p>
+          <p class="text-muted fs-5 mb-3">Software Engineering Student & Python Developer</p>
+          <p class="fs-5">I build scalable web applications using Python, Django, REST APIs, and Bootstrap. I enjoy solving real-world problems and continuously learning modern technologies to create efficient software solutions.</p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-3 mb-lg-3">
-            <a href="#projects" class="btn btn-primary btn-lg"><i class="fa-solid fa-folder-open px-4 py-2"></i>View Projects</a>
-            <a href="resume/resume.pdf"  class="btn btn-outline-primary btn-lg px-4 py-2"><i class="fa-solid fa-eye me-2"></i>View Resume</a>
+            <a href="#projects" class="btn btn-primary btn-lg"><i class="fa-solid fa-folder-open me-2"></i>View Projects</a>
+            <a href="resume/resume.pdf"  class="btn btn-outline-primary btn-lg me-2"><i class="fa-solid fa-eye me-2"></i>View Resume</a>
           </div>
         </div>
         <div class="col-lg-5 p-0 overflow-hidden img-hero shadow rounded-4">
@@ -63,15 +63,18 @@
         </div>
       </div>
     </div>
-  </section>
+  <!-- </section> -->
+
+
+  
+
 
   <!-- about me section -->
   <section id="about">
-  <div class="container my-5">
+  <div class="container">
     <h2 class="text-center section-title">About Me</h2>
     <p class="text-center section-subtitle">A quick introduction about my background, skills, and career goals.</p>
-    <div class="row align-items-center justify-content-center">
-        
+    <div class="row align-items-center justify-content-center">    
       <div class="col-lg-9 col-xl-8" data-aos="zoom-in">
         <div class="card border-0 shadow rounded-4 p-4 h-100">
           <p class="text-muted fs-5 mb-4">I'm a Software Engineering student with a passion for Python development and modern web technologies. I enjoy building practical web applications, solving real-world problems, and continuously expanding my skills through hands-on projects and continuous learning.</p>
@@ -80,7 +83,7 @@
               <tbody>
                 <tr>
                   <th><i class="fa-solid fa-graduation-cap me-2"></i>Education</th>
-                  <td>BS Software Engineering</td>
+                  <td>BS Software Engineering (3rd Semester)</td>
                 </tr>
                 <tr>
                   <th><i class="fa-solid fa-briefcase me-2"></i>Experience</th>
@@ -111,7 +114,7 @@
 
     <!-- Skills secttion -->
     <section id="skills">
-    <div class="container my-5">
+    <div class="container">
       <h2 class="text-center section-title">Skills</h2>
       <p class="text-center section-subtitle">
         Technologies and tools I use to build modern web applications.
@@ -177,14 +180,14 @@
 
     <!-- Experience -->
     <section id="experience">
-    <div class="container my-5">
+    <div class="container">
       <h2 class="text-center section-title">Experience</h2>
       <p class="text-muted section-subtitle">My professional experience and the practical skills I gained through real-world projects.</p>
       <div class="row justify-content-center" data-aos="fade-up">
         <div class="col-lg-8 col-xl-7">
           <div class="card border-0 shadow rounded-4 h-100">
             <div class="card-body">
-              <h5 class="card-title"><i class="fa-solid fa-briefcase text-primary me-2"></i>Python Development Intern</h5>
+              <h5 class="card-title"><i class="fa-solid fa-briefcase text-primary me-2"></i>Python Development Internship</h5>
               <h6 class="card-subtitle mb-3 fw-bold text-primary"><i class="fa-regular fa-calendar me-2"></i>July 2026<br><i class="fa-solid fa-building me-2"></i>Teyzix Core</h6>
               <ul class="list-unstyled mt-4">
                 <li class="mb-3">Developed real-world <span class="badge badge-python">Python</span> applications to solve practical problems.</li>
@@ -204,7 +207,7 @@
 
     <!-- Projects -->
   <section id="projects" class="bg-light">
-    <div class="container py-5">
+    <div class="container">
       <h2 class="text-center section-title">Projects</h2>
       <p class="text-center section-subtitle">A selection of projects that showcase my skills in Python, web development, and software engineering.</p>
       <div class="row g-4">
@@ -527,7 +530,7 @@
 
   <!-- Education Section -->
   <section id="education">
-    <div class="container my-5">
+    <div class="container">
 
       <h2 class="text-center section-title">Education</h2>
 
@@ -546,7 +549,7 @@
 
               <ul class="list-group list-group-flush mt-4">
 
-                <li class="list-group-item py-3"><i class="fa-regular fa-calendar me-2"></i><strong>Duration:</strong> 2025 - Present</li>
+                <li class="list-group-item py-3"><i class="fa-regular fa-calendar me-2"></i><strong>Duration:</strong> 2025 - 2029</li>
 
                 <li class="list-group-item py-3"><i class="fa-solid fa-star me-2"></i><strong>CGPA:</strong> 3.70 / 4.00</li>
 
@@ -565,7 +568,7 @@
   </section>
 
   <!-- Certification -->
-  <section id="certifications" class="py-5">
+  <section id="certifications">
     <div class="container">
 
       <h2 class="text-center section-title">Certifications</h2>
@@ -606,7 +609,7 @@
 
   <!-- contact section -->
   <section id="contact">
-    <div class="container my-5">
+    <div class="container">
       <h2 class="text-center section-title">Contact Me</h2>
       <p class="text-center section-subtitle">Feel free to reach out for internships, freelance projects, collaborations, or just to connect.</p>
 
