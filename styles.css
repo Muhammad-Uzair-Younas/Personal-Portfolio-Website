@@ -350,6 +350,9 @@ section {
   .project-img {
     height: 190px;
   }
+  .project-modal {
+    height: 150px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
